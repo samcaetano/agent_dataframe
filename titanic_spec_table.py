@@ -14,7 +14,7 @@ with open('data/metadata.json') as f:
     METADATA = json.load(f)
 
 repl = PythonREPL()
-repl.locals = {'df': DATA.sample(5)}
+repl.locals = {'df': DATA}
 repl_tool = Tool(
     name="python_repl",
     description="A pandas dataframe instance. Use this to execute pandas.DataFrame commands. Input should be a valid pandas query. Remember to always `import pandas` prior to your queries.",
@@ -41,7 +41,7 @@ Example 2:
 <assistant> There were .... who survived
 
 # RESPONSE FORMAT
-- Always give friendly responses.
+- Always give friendly responses in a natural language format.
 """
 
 prompt = ChatPromptTemplate(
